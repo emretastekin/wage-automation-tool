@@ -42,7 +42,7 @@ const AddWorker = (props) => {
         </label>
         <input
           type="text"
-          className="max-w-[40rem] w-full mx-auto border p-1"
+          className="max-w-[40rem] w-full mx-auto border p-2"
           placeholder="Çalışan ismi giriniz"
           id="name"
           onChange={(event) => setEnteredWorkerName(event.target.value)}

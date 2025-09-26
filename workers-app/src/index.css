@@ -11,3 +11,7 @@ html{
 body {
     @apply bg-black w-1/3 mx-auto
 }
+
+.error-modal {
+    @apply fixed top-1/4 left-0 flex justify-center mx-auto w-full z-50
+}

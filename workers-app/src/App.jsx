@@ -1,17 +1,24 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddWorker from "./components/Workers/AddWorker";
 import WorkerList from "./components/Workers/WorkerList";
 
 function App() {
+  const [workers, setWorkers] = useState(
+    localStorage.getItem("workers")
+      ? JSON.parse(localStorage.getItem("workers"))
+      : []
+  );
 
-  const [workers,setWorkers] = useState([]);
+  useEffect(() => {
+    localStorage.setItem("workers", JSON.stringify(workers));
+  }, [workers]);
 
   return (
-    <div className="App">
+    <React.Fragment>
       <h1 className="text-white text-center mt-6 text-3xl">Wage Otomation</h1>
       <AddWorker setWorkers={setWorkers} />
       <WorkerList workers={workers} setWorkers={setWorkers} />
-    </div>
+    </React.Fragment>
   );
 }
 
